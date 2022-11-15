@@ -1,0 +1,32 @@
+{
+    "name": "testing__js",
+    "version": "1.0.0",
+    "description": "Aprenderemos a testear código JS",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.20.2",
+        "@babel/preset-env": "^7.20.2",
+        "@types/jest": "^29.2.3",
+        "babel-jest": "^29.3.1",
+        "jest": "^29.3.1"
+    },
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watchAll"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KeepCodingWeb13/testing-js.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/KeepCodingWeb13/testing-js/issues"
+    },
+    "homepage": "https://github.com/KeepCodingWeb13/testing-js#readme"
+}
