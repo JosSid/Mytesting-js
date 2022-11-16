@@ -83,6 +83,10 @@ describe('Testing Carrito Class', () => {
         });
 
     });
-    describe.todo('Aplicar TDD para remove item')
-    //Pista: debereis modificar el test tambien de addItem para generar un id cuando se añade el item
+
+    describe('removeItem', () => {
+        it.todo('Aplicar TDD para remove item')
+        //Pista: debereis modificar el test tambien de addItem para generar un id cuando se añade el item
+    })
+
 });
