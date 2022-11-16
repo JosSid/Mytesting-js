@@ -5,6 +5,10 @@ describe('Testing Carrito Class', () => {
     const nigiriItem = {
         name: 'Nigiri',
         price: 1.6
+    };
+    let watter = {
+        name: 'Bottle of watter',
+        price: 1
     }
     //Hook de jest para que instancoie un carrito para cada test
     beforeEach(() => {
@@ -35,5 +39,32 @@ describe('Testing Carrito Class', () => {
         it('Should not contain an empty object when adding a nigiriItem', () => {
             expect(carrito.items).not.toContainEqual({})
         });
+    });
+
+    describe('getTotalCheckout', () => {
+        it('Should return 1.6 after adding a nigiriItem', () => {
+            carrito.addItem(nigiriItem);
+            expect(carrito.getTotalCheckout()).toBeCloseTo(1.6);
+        });
+
+        it('Should return 3.2 when adding 2 nigiriItems', () => {
+            carrito.addItem(nigiriItem);
+            carrito.addItem(nigiriItem);
+            expect(carrito.getTotalCheckout()).toBeCloseTo(3.2)
+        });
+
+        it('Should return 2.6 when adding 1 nigiriItems and 1 watter', () => {
+            carrito.addItem(nigiriItem);
+            carrito.addItem(watter);
+            expect(carrito.getTotalCheckout()).toBeCloseTo(2.6)
+        });
+
+        it('Should return 4.2 when adding 2 nigiriItems and 1 watter', () => {
+            carrito.addItem(nigiriItem);
+            carrito.addItem(nigiriItem);
+            carrito.addItem(watter);
+            expect(carrito.getTotalCheckout()).toBeCloseTo(4.2)
+        });
+
     });
 });
