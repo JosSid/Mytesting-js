@@ -39,6 +39,22 @@ describe('Testing Carrito Class', () => {
         it('Should not contain an empty object when adding a nigiriItem', () => {
             expect(carrito.items).not.toContainEqual({})
         });
+        // Manejo de errores en Jest
+        it('Should trow an error when adding empty objects to the carrito', () => {
+            expect(() => carrito.addItem({})).toThrow();
+        });
+        // edge Testing
+        it('Should trow an error saying "Must be an object" when trying to add a non object', () => {
+            expect(() => carrito.addItem('Hello')).toThrow(/must be an object/i);
+            expect(() => carrito.addItem(33)).toThrow(/must be an object/i);
+            //expect(() => carrito.addItem(new Promise())).toThrow(/must be an object/i);
+            expect(() => carrito.addItem(function(){})).toThrow(/must be an object/i);
+        });
+        
+        /*TODO*/it('Should throw an error when trying to add an item without name or price', () => {
+            expect(() => carrito.addItem({name: undefined})).toThrow(/must be defined name and price/i);
+            expect(() => carrito.addItem({price: undefined})).toThrow(/must be defined name and price/i);
+        })
     });
 
     describe('getTotalCheckout', () => {
@@ -63,8 +79,10 @@ describe('Testing Carrito Class', () => {
             carrito.addItem(nigiriItem);
             carrito.addItem(nigiriItem);
             carrito.addItem(watter);
-            expect(carrito.getTotalCheckout()).toBeCloseTo(4.2)
+            expect(carrito.getTotalCheckout()).toBeCloseTo(4.2);
         });
 
     });
+    describe.todo('Aplicar TDD para remove item')
+    //Pista: debereis modificar el test tambien de addItem para generar un id cuando se añade el item
 });

@@ -9,6 +9,13 @@ module.exports = class Carrito {
     };
 
     addItem(item){
+        if(typeof item === 'object' && Object.keys(item).length === 0) {
+            throw new Error('Item cannot be an empty object')
+        } else if(typeof item !== 'object') {
+            throw new Error('Must be an object')
+        }else if(!item.name || !item.price){
+            throw new Error('must be defined name and price')
+        }
         this.items.push(item);
     };
 
