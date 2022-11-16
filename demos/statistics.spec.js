@@ -23,7 +23,7 @@ describe('Testing the avg function', () => {
     });
 
     it.todo('Should not return undefined for input array []');
-    it.todo('Should not return a positive number for array with all nehative numbers');
+    it.todo('Should not return a positive number for array with all negative numbers');
 });
 
 describe('Testing the stdDev function', () => {
@@ -34,9 +34,18 @@ describe('Testing the stdDev function', () => {
     it('Should return 0.81649 for [1,2,3]', () => {
         expect(stdDev([1,2,3])).toBeCloseTo(0.81649, 4)
     });
+
+    it.todo('Should not return a negative value for any input array');
 });
 
-it('Prueba random de suma de flotantes', () => {
+it.skip('Prueba random de suma de flotantes', () => {
     expect(0.1 + 0.2).toBeCloseTo(0.3)
-})
+});
+
+it('Prueba random de división por zero', () => {
+    expect(3 / 0).not.toBeFinite();
+    expect(4 / 0).toEqual(Infinity);
+});
+
+
 
