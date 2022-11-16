@@ -40,4 +40,5 @@ describe('async & await style', () => {
         }
     });
     it.todo('Should fail the request failedRequest')
+    it.todo('Should make 1 assertion for randomRequest')
 });
