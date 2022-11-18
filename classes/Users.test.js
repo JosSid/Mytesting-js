@@ -41,5 +41,16 @@ describe('User class', () => {
 
             }
         });
+
+        it('Should create a new user', async () => {
+            axios.post.mockResolvedValue({data: {name: 'Bill'}});
+            expect.assertions(1)
+            try{
+                const user = await Users.create()
+                expect(user).toMatchObject({name: 'Bill'})
+            }catch(e){
+
+            }
+        });
     });
 });
