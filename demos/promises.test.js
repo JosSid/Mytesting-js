@@ -7,7 +7,12 @@ describe('Callback style', () => {
             done()
         });
     });
-    it.todo('Should have status 200 the request successfulRequest');
+    it('Should have status 200 the request successfulRequest', (done) => {
+        successfulRequest().then(response => {
+            expect(response.status).toBe(200);
+            done();
+        })
+    });
 });
 
 describe('Promise style', () => {
@@ -18,7 +23,12 @@ describe('Promise style', () => {
             expect(response.status).toEqual(200)
         });
     });
-    it.todo('Should fail the request failedRequest')
+    it('Should fail the request failedRequest', () => {
+        expect.assertions(1);
+        return failedRequest().catch(e => {
+            expect(e.message).toMatch(/failed/i)
+        })
+    });
 });
 
 describe('.rejects/.resolves style', () => {
@@ -26,7 +36,10 @@ describe('.rejects/.resolves style', () => {
         expect.assertions(1);
         return expect(failedRequest()).rejects.toThrow(/request failed/i)
     });
-    it.todo('Should have status 200 the request successfulRequest');
+    /*rep*/it('Should have status 200 the request successfulRequest', () => {
+        expect.assertions(1);
+        return expect(successfulRequest().then(data => data.status)).resolves.toBe(200)
+    });
 });
 
 describe('async & await style', () => {
@@ -39,6 +52,13 @@ describe('async & await style', () => {
 
         }
     });
-    it.todo('Should fail the request failedRequest')
+     it('Should fail the request failedRequest', async () => {
+        expect.assertions(1);
+        try{
+            const response = await failedRequest().rejects()
+        }catch(e){
+            expect(e.message).toMatch(/failed/i)
+        }
+    }); 
     it.todo('Should make 1 assertion for randomRequest')
 });
