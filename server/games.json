@@ -39,36 +39,6 @@
       "id": 2,
       "name": "Donnie Prest",
       "image": "https://randomuser.me/api/portraits/thumb/women/88.jpg"
-    },
-    {
-      "name": "Jordi",
-      "image": "https://api.placid.app/u/qsraj?title[text]=I%20am%20a%20dynamic%20Image%21",
-      "id": 3
-    },
-    {
-      "name": "Manolete",
-      "image": "https://api.placid.app/u/qsraj?title[text]=Manolete",
-      "id": 4
-    },
-    {
-      "name": "Jordi",
-      "image": "https://api.placid.app/u/qsraj?title[text]=I%20am%20a%20dynamic%20Image%21",
-      "id": 5
-    },
-    {
-      "name": "Manolete",
-      "image": "https://api.placid.app/u/qsraj?title[text]=Manolete",
-      "id": 6
-    },
-    {
-      "name": "Jordi",
-      "image": "https://api.placid.app/u/qsraj?title[text]=I%20am%20a%20dynamic%20Image%21",
-      "id": 7
-    },
-    {
-      "name": "Manolete",
-      "image": "https://api.placid.app/u/qsraj?title[text]=Manolete",
-      "id": 8
     }
   ],
   "games": [

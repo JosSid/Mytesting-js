@@ -16,7 +16,9 @@
     },
     "scripts": {
         "test": "jest",
-        "test:watch": "jest --watchAll"
+        "test:watch": "jest --watchAll",
+        "test:unit": "jest unit",
+        "test:int": "jest integration"
     },
     "repository": {
         "type": "git",
