@@ -7,7 +7,7 @@ const usersController = require('../controllers/users.controllers.js')
 
 /* GET users listing. */
 router.get('/', usersController.getAllUsers);
-
+//TODO moverlo a users.controllers.js
 /* GET user by id. */
 router.get('/:id', async function(req, res, next) {
   try {
@@ -23,7 +23,7 @@ router.get('/:id', async function(req, res, next) {
 });
 
 /* POST Create a new user */
-
+router.post('/', usersController.createUser)
 /* PUT Edit a user by id */
 
 /* DELETE Deletes a user by id */

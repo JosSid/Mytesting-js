@@ -9,5 +9,15 @@ module.exports = {
           next(e.message);
         }
       
+      },
+
+      createUser: async function(req, res, next) {
+        try{
+          let createdUser = await userModel.create(req.body);
+          res.json({user: createdUser})
+        }catch(e){
+
+        }
+        
       }
 }
