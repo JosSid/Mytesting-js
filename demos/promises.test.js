@@ -1,4 +1,4 @@
-import {failedRequest, successfulRequest} from './promises.js'
+import {failedRequest, successfulRequest, randomRequest} from './promises.js'
 
 describe('Callback style', () => {
     it('Should fail the request failedRequest', (done) => {
@@ -55,10 +55,18 @@ describe('async & await style', () => {
      it('Should fail the request failedRequest', async () => {
         expect.assertions(1);
         try{
-            const response = await failedRequest().rejects()
+            const response = await failedRequest()
         }catch(e){
-            expect(e.message).toMatch(/failed/i)
+            expect(e.response.status).toBeGreaterThanOrEqual(400)
         }
     }); 
-    it.todo('Should make 1 assertion for randomRequest')
+    it('Should make 1 assertion for randomRequest', async () => {
+        expect.assertions(1);
+        try {
+            const response = await randomRequest();
+            expect(response.status).toBeGreaterThanOrEqual(200);
+        }catch(e){
+            expect(e.response.status).toBeGreaterThanOrEqual(400)
+        }
+    })
 });
